@@ -125,9 +125,10 @@
 <div class="sect1">
 <h2 id="con_the-benefits-of-using-vale_docs"><a class="anchor" href="#con_the-benefits-of-using-vale_docs"></a>The benefits of using vale</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>How does Vale help you improve your content quality and productivity?</p>
-</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">How does Vale help you improve your content quality and productivity?</dt>
+<dd>
 <div class="ulist">
 <ul>
 <li>
@@ -147,16 +148,17 @@
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>The <a href="https://github.com/vale-at-red-hat/vale-at-red-hat">vale-at-red-hat repository</a> contains:</p>
-</div>
+</dd>
+<dt class="hdlist1"><a href="https://github.com/vale-at-red-hat/vale-at-red-hat">The vale-at-red-hat repository</a></dt>
+<dd>
+<p>Contains resources to validate language in documentation projects using Vale:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The <strong>RedHat</strong> Vale style, containing language rules suitable for documentation in Open Source projects and mandatory for Red Hat products</p>
+<p>The <em>RedHat</em> style for Vale</p>
 </li>
 <li>
-<p>The associated Vale configuration file</p>
+<p>Vale configuration files</p>
 </li>
 <li>
 <p>Documentation to start using Vale</p>
@@ -165,12 +167,35 @@
 <p>Guidelines to define a Vale onboarding strategy in a project</p>
 </li>
 <li>
-<p>Guidelines to contribute to the <strong>RedHat</strong> Style</p>
+<p>Guidelines to contribute to the <em>RedHat</em> Style</p>
 </li>
 <li>
 <p>Guidelines to create a project specific Style or Vocabulary</p>
 </li>
 </ul>
+</div>
+</dd>
+<dt class="hdlist1">The <em>RedHat</em> style for Vale</dt>
+<dd>
+<p>Contains language rules suitable for documentation in Open Source projects and mandatory for Red Hat products. These language rules originates from:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://redhat-documentation.github.io/supplementary-style-guide/"><em>Red Hat supplementary style guide for product documentation</em></a></p>
+</li>
+<li>
+<p>Latest edition of the <em>IBM Style Guide</em></p>
+</li>
+<li>
+<p><a href="https://github.com/errata-ai/IBM">Vale-compatible implementation</a> of <a href="https://www.ibm.com/developerworks/library/styleguidelines/index.html"><em>IBM&#8217;s Developer Editorial Style Guide</em></a></p>
+</li>
+<li>
+<p><a href="https://github.com/errata-ai/en_US-web"><em>Custom Vale open-source dictionary for American English.</em></a></p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
 </div>
 <div class="ulist">
 <div class="title">Additional resources</div>
@@ -197,19 +222,32 @@
 <dl>
 <dt class="hdlist1"><code>vale</code></dt>
 <dd>
-<p>The Vale command-line tool.</p>
+<p>The <a href="https://docs.errata.ai/vale/about">Vale command-line tool</a> that brings code-like linting to prose.</p>
 </dd>
 <dt class="hdlist1">Rule</dt>
 <dd>
-<p>A YAML file defining a language issue, a proposed solution, and a link to more information.</p>
+<p>A YAML file defining:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>a language issue, including spelling issues</p>
+</li>
+<li>
+<p>a proposed solution</p>
+</li>
+<li>
+<p>a link to more information.</p>
+</li>
+</ul>
+</div>
 </dd>
 <dt class="hdlist1">Style</dt>
 <dd>
-<p>A directory containing a collection of rules.</p>
+<p>A directory containing a collection of rules. You can choose to use a style as distributed by an upstream project, or include a copy in your project.</p>
 </dd>
 <dt class="hdlist1">Vocabulary</dt>
 <dd>
-<p>A directory containing lists of accepted and rejected words, applying to all styles. See <a href="../extending-the-vocabulary/" class="page">Extending the vocabulary</a>.</p>
+<p>A directory in a project, containing lists of accepted and rejected words, applying to all styles. See <a href="../extending-the-vocabulary/" class="page">Extending the vocabulary</a>.</p>
 </dd>
 </dl>
 </div>
@@ -218,13 +256,29 @@
 <h3 id="_vale_configuration_files"><a class="anchor" href="#_vale_configuration_files"></a>Vale configuration files</h3>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><code>.vale</code> directory</dt>
+<dt class="hdlist1">Styles directory</dt>
 <dd>
-<p>Contains a collection of Styles and Vocabularies.</p>
+<p>Contains a collection of Styles and Vocabulary. In this repository it is:</p>
+<div class="listingblock">
+<div class="content">
+<pre>.vale/styles</pre>
+</div>
+</div>
 </dd>
 <dt class="hdlist1"><code>.vale.ini</code> configuration file</dt>
 <dd>
-<p>Tells Vale where to find the <code>.vale</code> directory and other important settings.</p>
+<p>It determines</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The styles location</p>
+</li>
+<li>
+<p>Patterns to match files to validate
+*</p>
+</li>
+</ul>
+</div>
 </dd>
 </dl>
 </div>
