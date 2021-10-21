@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Using vale with a continuous integration service :: Vale for Red Hat documentation writers</title>
-    <link rel="canonical" href="https://rolfedh.github.io/studious-fortnight/docs/end-user-guide/using-vale-with-a-continuous-integration-service/">
+    <link rel="canonical" href="https://vate-at-red-hat.github.io/vale-at-red-hat/docs/end-user-guide/using-vale-with-a-continuous-integration-service/">
     <meta name="keywords" content="vale">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
@@ -24,7 +24,7 @@
           <span></span>
         </button>
         <img src="../../../_/img/project-logo.svg" class="navbar-logo" alt="Project logo">
-        <a href="https://rolfedh.github.io/studious-fortnight/index.html">Vale for Red Hat documentation writers</a>
+        <a href="https://vate-at-red-hat.github.io/vale-at-red-hat/index.html">Vale for Red Hat documentation writers</a>
       </div>
     </div>
     <div id="topbar-nav" class="navbar-menu">
@@ -114,7 +114,7 @@
     <li><a href="./">Continuous integration</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/rolfedh/studious-fortnight/edit/main/modules/end-user-guide/pages/using-vale-with-a-continuous-integration-service.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/vate-at-red-hat/vale-at-red-hat/edit/main/modules/end-user-guide/pages/using-vale-with-a-continuous-integration-service.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -186,8 +186,8 @@ jobs:
         uses: errata-ai/vale-action@v1.4.0
         with:
           files: __onlyModified
-          styles: https://github.com/rolfedh/studious-fortnight/releases/latest/download/RedHat.zip
-          config: https://raw.githubusercontent.com/rolfedh/studious-fortnight/master/.vale-for-github-action.ini
+          styles: https://github.com/vate-at-red-hat/vale-at-red-hat/releases/latest/download/RedHat.zip
+          config: https://raw.githubusercontent.com/vate-at-red-hat/vale-at-red-hat/master/.vale-for-github-action.ini
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}</code></pre>
 </div>
