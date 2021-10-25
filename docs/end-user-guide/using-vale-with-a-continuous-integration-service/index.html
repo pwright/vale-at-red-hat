@@ -46,9 +46,17 @@
     <h3 class="title"><a href="../introduction/">Vale for Red Hat documentation writers</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">End-user guide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../introduction/">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../redhat-style-for-vale/">redhat-style-for-vale.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../glossary/">Glossary</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../getting-started-with-vale/">Getting started</a>
@@ -65,20 +73,29 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../adding-vale-configuration-to-a-project/">Adding to a project</a>
   </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../creating-a-vocabulary-for-a-project/">Extending the vocabulary</a>
+  </li>
   <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="./">Continuous integration</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../contributing/">Contributing</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../extending-the-vocabulary/">Extending the vocabulary</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../extending-styles/">Extending styles</a>
-  </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Contributor guide</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../contributor-guide/contributing/">Contributing</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../contributor-guide/vale-at-red-hat-repository/">Repository</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../contributor-guide/extending-the-spelling-rule/">Extending <em>Spelling</em></a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../contributor-guide/extending-the-redhat-style/">Extending rules</a>
   </li>
 </ul>
   </li>
@@ -111,6 +128,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../introduction/">Vale for Red Hat documentation writers</a></li>
+    <li>End-user guide</li>
     <li><a href="./">Continuous integration</a></li>
   </ul>
 </nav>
@@ -209,7 +227,17 @@ jobs:
 <h2 id="proc_using-vale-with-a-continuous-integration-service_docs"><a class="anchor" href="#proc_using-vale-with-a-continuous-integration-service_docs"></a>Using vale with a continuous integration service</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Consider using vale with a continuous integration service to measure or enforce the project compliance with the Style Guides.</p>
+<p>Consider using the vale CLI with a continuous integration service when:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The content repository is not on GitHub.</p>
+</li>
+<li>
+<p>The goal is to measure or enforce the project compliance with the Style Guides.</p>
+</li>
+</ul>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
