@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Using vale in the IDE :: Vale for Red Hat documentation writers</title>
-    <link rel="canonical" href="https://vale-at-red-hat.github.io/vale-at-red-hat/docs/end-user-guide/using-vale-in-the-ide/">
-    <meta name="keywords" content="vale">
+    <title>Using vale GitHub Action :: Vale for Red Hat documentation writers</title>
+    <link rel="canonical" href="https://vale-at-red-hat.github.io/vale-at-red-hat/docs/end-user-guide/using-vale-github-action/">
+    <meta name="keywords" content="vale, github">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/extra.css">
@@ -64,8 +64,8 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../understanding-vale-output/">Understanding Vale alerts</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="./">Vale in the IDE</a>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../using-vale-in-the-ide/">Vale in the IDE</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../defining-a-vale-onboarding-strategy/">Onboarding strategy</a>
@@ -76,8 +76,8 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../creating-a-vocabulary-for-a-project/">Extending the vocabulary</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../using-vale-github-action/">GitHub Action</a>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="./">GitHub Action</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../using-vale-with-a-continuous-integration-service/">Continuous integration</a>
@@ -132,79 +132,95 @@
   <ul>
     <li><a href="../introduction/">Vale for Red Hat documentation writers</a></li>
     <li>End-user guide</li>
-    <li><a href="./">Vale in the IDE</a></li>
+    <li><a href="./">GitHub Action</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/vale-at-red-hat/vale-at-red-hat/edit/main/modules/end-user-guide/pages/using-vale-in-the-ide.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/vale-at-red-hat/vale-at-red-hat/edit/main/modules/end-user-guide/pages/using-vale-github-action.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Using vale in the IDE</h1>
+<h1 class="page">Using vale GitHub Action</h1>
 <div class="sect1">
-<h2 id="proc_using-vale-in-the-ide_docs"><a class="anchor" href="#proc_using-vale-in-the-ide_docs"></a>Using vale in the IDE</h2>
+<h2 id="proc_using-vale-github-action_docs"><a class="anchor" href="#proc_using-vale-github-action_docs"></a>Using vale GitHub Action</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Consider using Vale in your IDE when:</p>
+<p>Consider using vale GitHub Action when:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>You want a direct feedback in your editor.</p>
+<p>The goal is to measure or enforce the project compliance with the Style Guides.</p>
 </li>
 <li>
-<p>You use a supported IDE, such as Visual Studio Code.</p>
+<p>The content repository is on GitHub.</p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Due to the GitHub token permissions, this Action can not post annotations to PRs from forked repositories.
+</td>
+</tr>
+</table>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>Vale CLI is installed and configured. See <a href="../getting-started-with-vale/" class="page">Getting started with vale</a>.</p>
+<p><a href="../getting-started-with-vale/" class="page">Getting started with vale</a></p>
 </li>
 <li>
-<p><a href="https://code.visualstudio.com/docs/setup/setup-overview">Visual Studio Code</a> is installed.</p>
+<p><a href="../adding-vale-configuration-to-a-project/" class="page">Adding vale configuration to a project</a></p>
+</li>
+<li>
+<p><a href="../defining-a-vale-onboarding-strategy/" class="page">Defining a vale onboarding strategy</a></p>
 </li>
 </ul>
 </div>
-<div class="olist arabic">
+<div class="ulist">
 <div class="title">Procedure</div>
-<ol class="arabic">
+<ul>
 <li>
-<p>In  Visual Studio Code, install the <a href="https://marketplace.visualstudio.com/items?itemName=errata-ai.vale-server">Visual Studio Code extension for Vale using the Marketplace</a>.</p>
-</li>
-<li>
-<p>Configure the extension to use Vale CLI rather than Vale Server  in the extension settings (<strong>Preferences &gt; Extensions &gt; Vale &gt; Use CLI</strong>).</p>
+<p>Add a <code>.github/workflows/vale.yml</code> file to your repository with following content:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"vale.core.useCLI": true</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">name: Linting with Vale
+on:
+  - pull_request
+  - push
+jobs:
+  prose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Vale Linter
+        uses: errata-ai/vale-action@v1.4.0
+        with:
+          files: __onlyModified
+          styles: https://github.com/vale-at-red-hat/vale-at-red-hat/releases/latest/download/RedHat.zip
+          config: https://raw.githubusercontent.com/vale-at-red-hat/vale-at-red-hat/master/.vale-for-github-action.ini
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}</code></pre>
 </div>
 </div>
 </li>
-<li>
-<p>Restart Visual Studio Code.</p>
-</li>
-</ol>
-</div>
-<div class="olist arabic">
-<div class="title">Verification</div>
-<ol class="arabic">
-<li>
-<p>Open a content file causing vale alerts.</p>
-</li>
-<li>
-<p>Open the <strong>Problems</strong> view and search for vale alerts in it.</p>
-</li>
-</ol>
+</ul>
 </div>
 <div class="ulist">
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="https://github.com/errata-ai/vale-vscode">Visual Studio Code extension for Vale repository and documentation</a></p>
+<p><a href="https://github.com/errata-ai/vale-action">Vale GitHub action</a>.</p>
 </li>
 </ul>
 </div>
