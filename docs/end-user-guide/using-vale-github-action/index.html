@@ -188,9 +188,9 @@ Due to the GitHub token permissions, this Action can not post annotations to PRs
 </li>
 </ul>
 </div>
-<div class="ulist">
+<div class="olist arabic">
 <div class="title">Procedure</div>
-<ul>
+<ol class="arabic">
 <li>
 <p>Add a <code>.github/workflows/vale.yml</code> file to your repository with following content:</p>
 <div class="listingblock">
@@ -217,7 +217,16 @@ jobs:
 </div>
 </div>
 </li>
-</ul>
+<li>
+<p>Create a <code>.github/styles</code> directory containing an empty file. The Vale GitHub Action use it to decompress the <em>RedHat</em> style.</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mkdir .github/styles
+$ touch .github/styles/.placeholder</pre>
+</div>
+</div>
+</li>
+</ol>
 </div>
 <div class="ulist">
 <div class="title">Additional resources</div>
