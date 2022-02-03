@@ -6,15 +6,16 @@
     <title>Defining a vale onboarding strategy :: Vale for Red Hat documentation writers</title>
     <link rel="canonical" href="https://redhat-documentation.github.io/vale-at-red-hat/docs/end-user-guide/defining-a-vale-onboarding-strategy/">
     <meta name="keywords" content="onnboarding, strategy">
-    <meta name="generator" content="Antora 2.3.4">
-    <link rel="stylesheet" href="../../../_/css/site.css">
-<link rel="stylesheet" href="../../../_/css/extra.css">
-<link rel="stylesheet" href="../../../_/font-awesome-4.7.0/css/font-awesome.min.css">
-<link rel="icon" href="../../../favicon.ico" type="image/x-icon">
-    <script>var uiRootPath = '../../../_'</script>
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../../docs/_/css/site.css">
+<link rel="stylesheet" href="../../../docs/_/css/extra.css">
+<link rel="stylesheet" href="../../../docs/_/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="../../../docs/_/img/favicon.ico" type="image/x-icon">
+<script>var uiRootPath = '../../../docs/_'</script>
+    <script>var uiRootPath = '../../../docs/_'</script>
   </head>
   <body class="article">
-<header class="header" role="banner">
+<header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="navbar-item">
@@ -23,21 +24,23 @@
           <span></span>
           <span></span>
         </button>
-        <img src="../../../_/img/project-logo.svg" class="navbar-logo" alt="Project logo">
+        <img src="../../../docs/_/img/project-logo.svg" class="navbar-logo" alt="Project logo">
         <a href="https://redhat-documentation.github.io/vale-at-red-hat/index.html">Vale for Red Hat documentation writers</a>
       </div>
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
         <div class="navbar-item hide-for-print">
-          <script async src="https://cse.google.com/cse.js?cx=002898025167115630151:gnr5edrg2eo"></script>
-          <div class="gcse-searchbox" enableAutoComplete="true"></div>
+          <div id="search-field" class="field">
+            <input id="search-input" type="text" placeholder="Search the docs" autofocus>
+          </div>
         </div>
+        <a class="navbar-item" href="https://github.com/redhat-documentation/vale-at-red-hat/">Source Code</a>
       </div>
     </div>
   </nav>
-  <div class="gcse-searchresults"></div>
-</header><div class="body">
+</header>
+<div class="body">
 <div class="nav-container" data-component="docs" data-version="master">
   <aside class="nav">
     <div class="panels">
@@ -244,10 +247,10 @@
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p><a href="../reporting-vale-alerts/" class="page">Generating extended Vale alerts reports</a></p>
+<p><a href="../reporting-vale-alerts/" class="xref page">Generating extended Vale alerts reports</a></p>
 </li>
 <li>
-<p><a href="../understanding-vale-output/" class="page">Understanding vale output</a></p>
+<p><a href="../understanding-vale-output/" class="xref page">Understanding vale output</a></p>
 </li>
 </ul>
 </div>
@@ -261,10 +264,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../using-vale-github-action/" class="page">Using vale GitHub Action</a></p>
+<p><a href="../using-vale-github-action/" class="xref page">Using vale GitHub Action</a></p>
 </li>
 <li>
-<p><a href="../using-vale-with-a-continuous-integration-service/" class="page">Using vale with a continuous integration service</a></p>
+<p><a href="../using-vale-with-a-continuous-integration-service/" class="xref page">Using vale with a continuous integration service</a></p>
 </li>
 </ul>
 </div>
@@ -285,7 +288,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>To onboard a collection of repositories, start by the repository with the smallest word count. See <a href="../reporting-vale-alerts/" class="page">Generating extended Vale alerts reports</a></p>
+<p>To onboard a collection of repositories, start by the repository with the smallest word count. See <a href="../reporting-vale-alerts/" class="xref page">Generating extended Vale alerts reports</a></p>
 </li>
 </ul>
 </div>
@@ -310,7 +313,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>The <code>RedHat</code> style has been thoroughly tested on a corpus of 113000 words. You can expect false positives when applying the style to a new corpus. Consider <a href="../../contributor-guide/contributing/" class="page">Contributing</a> to the style.</p>
+<p>The <code>RedHat</code> style has been thoroughly tested on a corpus of 113000 words. You can expect false positives when applying the style to a new corpus. Consider <a href="../../contributor-guide/contributing/" class="xref page">Contributing</a> to the style.</p>
 </li>
 </ul>
 </div>
@@ -320,7 +323,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../reporting-vale-alerts/" class="page">Generating extended Vale alerts reports</a></p>
+<p><a href="../reporting-vale-alerts/" class="xref page">Generating extended Vale alerts reports</a></p>
 </li>
 <li>
 <p>Use the results to identify the rule creating the most errors, and work on that rule. Most probably, start with the Spelling rule.</p>
@@ -391,23 +394,23 @@ The Spelling rule is active for this line.</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../../contributor-guide/extending-the-spelling-rule/" class="page">Extending the <code>Spelling</code> rule</a></p>
+<p><a href="../../contributor-guide/extending-the-spelling-rule/" class="xref page">Extending the <code>Spelling</code> rule</a></p>
 </li>
 <li>
-<p><a href="../../contributor-guide/extending-the-redhat-style/" class="page">Extending the <code>RedHat</code> style</a></p>
+<p><a href="../../contributor-guide/extending-the-redhat-style/" class="xref page">Extending the <code>RedHat</code> style</a></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_decrease_the_number_of_alerts_requesting_adding_vale_configuration_to_a_project"><a class="anchor" href="#_decrease_the_number_of_alerts_requesting_adding_vale_configuration_to_a_project"></a>Decrease the number of alerts requesting <a href="../adding-vale-configuration-to-a-project/" class="page">Adding vale configuration to a project</a></h3>
+<h3 id="_decrease_the_number_of_alerts_requesting_adding_vale_configuration_to_a_project"><a class="anchor" href="#_decrease_the_number_of_alerts_requesting_adding_vale_configuration_to_a_project"></a>Decrease the number of alerts requesting <a href="../adding-vale-configuration-to-a-project/" class="xref page">Adding vale configuration to a project</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../creating-a-vocabulary-for-a-project/" class="page">Extending the vocabulary</a></p>
+<p><a href="../creating-a-vocabulary-for-a-project/" class="xref page">Extending the vocabulary</a></p>
 </li>
 <li>
-<p>Altering <strong>rules</strong> severity or disabling <strong>rules</strong> for the project. See <a href="../adding-vale-configuration-to-a-project/" class="page">Adding vale configuration to a project</a> and <a href="https://docs.errata.ai/vale/config">Vale documentation - configuration</a>.</p>
+<p>Altering <strong>rules</strong> severity or disabling <strong>rules</strong> for the project. See <a href="../adding-vale-configuration-to-a-project/" class="xref page">Adding vale configuration to a project</a> and <a href="https://docs.errata.ai/vale/config">Vale documentation - configuration</a>.</p>
 <div class="listingblock">
 <div class="content">
 <pre>RedHat.Annotations = NO
@@ -417,7 +420,7 @@ RedHat.Usage = suggestion</pre>
 </div>
 </li>
 <li>
-<p>Creating an additional style for the project. See <a href="../adding-vale-configuration-to-a-project/" class="page">Adding vale configuration to a project</a></p>
+<p>Creating an additional style for the project. See <a href="../adding-vale-configuration-to-a-project/" class="xref page">Adding vale configuration to a project</a></p>
 </li>
 </ul>
 </div>
@@ -425,10 +428,10 @@ RedHat.Usage = suggestion</pre>
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="../using-vale-cli/" class="page">Using Vale CLI</a></p>
+<p><a href="../using-vale-cli/" class="xref page">Using Vale CLI</a></p>
 </li>
 <li>
-<p><a href="../understanding-vale-output/" class="page">Understanding vale output</a></p>
+<p><a href="../understanding-vale-output/" class="xref page">Understanding vale output</a></p>
 </li>
 </ul>
 </div>
@@ -440,10 +443,16 @@ RedHat.Usage = suggestion</pre>
 </main>
 </div>
 <footer class="footer">
-  <p>This page was built using the Antora default UI.</p>
-  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+    <div>
+       <a href="https://redhat-documentation.github.io/vale-at-red-hat/sitemap.xml" target="_blank">Site Map</a> |
+       <a href="https://redhat-documentation.github.io/" target="_blank">Guidelines for Red Hat Documentation</a> | 
+       <a href="https://github.com/redhat-documentation/vale-at-red-hat/blob/main/DCO" target="_blank">Developer Certificate of Origin</a> |
+       <a href="https://github.com/redhat-documentation/vale-at-red-hat/blob/main/LICENSE" target="_blank">MIT License</a>
 </footer>
-<script src="../../../_/js/site.js"></script>
-<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../docs/_/js/site.js"></script>
+<script async src="../../../docs/_/js/vendor/highlight.js"></script>
+<script src="../../../docs/_/js/vendor/lunr.js"></script>
+<script src="../../../docs/_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../docs/_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
   </body>
 </html>
