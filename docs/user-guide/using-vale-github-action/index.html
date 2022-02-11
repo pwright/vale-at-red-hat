@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Extending the vocabulary :: Vale for Red Hat documentation writers</title>
-    <link rel="canonical" href="https://redhat-documentation.github.io/vale-at-red-hat/docs/end-user-guide/creating-a-vocabulary-for-a-project/">
-    <meta name="keywords" content="contributing, vocabulary">
+    <title>Using Vale GitHub Action :: Vale for writers at Red Hat</title>
+    <link rel="canonical" href="https://redhat-documentation.github.io/vale-at-red-hat/docs/user-guide/using-vale-github-action/">
+    <meta name="description" content="Overview of using Vale in a GitHub Action">
+    <meta name="keywords" content="vale, github">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../docs/_/css/site.css">
 <link rel="stylesheet" href="../../../docs/_/css/extra.css">
@@ -24,8 +25,8 @@
           <span></span>
           <span></span>
         </button>
-        <img src="../../../docs/_/img/project-logo.svg" class="navbar-logo" alt="Project logo">
-        <a href="https://redhat-documentation.github.io/vale-at-red-hat/index.html">Vale for Red Hat documentation writers</a>
+        <img src="../../../docs/_/img/logo.svg" class="navbar-logo" alt="Project logo">
+        <a href="https://redhat-documentation.github.io/vale-at-red-hat/index.html">Vale for writers at Red Hat</a>
       </div>
     </div>
     <div id="topbar-nav" class="navbar-menu">
@@ -35,37 +36,38 @@
             <input id="search-input" type="text" placeholder="Search the docs" autofocus>
           </div>
         </div>
-        <a class="navbar-item" href="https://github.com/redhat-documentation/vale-at-red-hat/">Source Code</a>
+        <a class="navbar-item" href="https://github.com/redhat-documentation/vale-at-red-hat/">
+          <img src="../../../docs/_/img/github.svg" alt="View source code on GitHub">
+        </a>
       </div>
     </div>
   </nav>
-</header>
-<div class="body">
+</header><div class="body">
 <div class="nav-container" data-component="docs" data-version="master">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../introduction/">Vale for Red Hat documentation writers</a></h3>
+    <h3 class="title"><a href="../introduction/">Vale for writers at Red Hat</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">End-user guide</span>
+    <span class="nav-text">User guide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../introduction/">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../installing-vale-cli/">Installing Vale CLI</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../using-vale-in-the-ide/">Vale in the IDE</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../redhat-style-for-vale/">RedHat Style</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../glossary/">Glossary</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../using-vale-cli/">Vale CLI</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../using-vale-in-the-ide/">Vale in the IDE</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../reporting-vale-alerts/">Vale reports</a>
@@ -77,13 +79,13 @@
     <a class="nav-link" href="../defining-a-vale-onboarding-strategy/">Onboarding strategy</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../adding-vale-configuration-to-a-project/">Adding to a project</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="./">Extending the vocabulary</a>
+    <a class="nav-link" href="../adding-vale-configuration-to-a-project/">Adding Vale to a project</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../using-vale-github-action/">GitHub Action</a>
+    <a class="nav-link" href="../creating-a-vocabulary-for-a-project/">Create a vocabulary</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="./">GitHub Action</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../using-vale-with-a-continuous-integration-service/">Continuous integration</a>
@@ -170,13 +172,13 @@
     <a class="nav-link" href="../../reference-guide/spelling/">Spelling</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../../reference-guide/termserrors/">Terms errors</a>
+    <a class="nav-link" href="../../reference-guide/termserrors/">Error terms</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../../reference-guide/termssuggestions/">Terms suggestions</a>
+    <a class="nav-link" href="../../reference-guide/termssuggestions/">Suggestion terms</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../../reference-guide/termswarnings/">Terms warnings</a>
+    <a class="nav-link" href="../../reference-guide/termswarnings/">Warning terms</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../../reference-guide/usage/">Usage</a>
@@ -188,12 +190,12 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Vale for Red Hat documentation writers</span>
+    <span class="title">Vale for writers at Red Hat</span>
     <span class="version">main</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <a class="title" href="../introduction/">Vale for Red Hat documentation writers</a>
+      <a class="title" href="../introduction/">Vale for writers at Red Hat</a>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../introduction/">main</a>
@@ -211,97 +213,105 @@
   <a href="../introduction/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../introduction/">Vale for Red Hat documentation writers</a></li>
-    <li>End-user guide</li>
-    <li><a href="./">Extending the vocabulary</a></li>
+    <li><a href="../introduction/">Vale for writers at Red Hat</a></li>
+    <li>User guide</li>
+    <li><a href="./">GitHub Action</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/redhat-documentation/vale-at-red-hat/edit/main/modules/end-user-guide/pages/creating-a-vocabulary-for-a-project.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/redhat-documentation/vale-at-red-hat/edit/main/modules/user-guide/pages/using-vale-github-action.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Extending the vocabulary</h1>
-<div class="sect1">
-<h2 id="proc_creating-a-vocabulary-for-a-project_docs"><a class="anchor" href="#proc_creating-a-vocabulary-for-a-project_docs"></a>Creating a vocabulary for a project</h2>
-<div class="sectionbody">
+<h1 class="page">Using Vale GitHub Action</h1>
 <div class="paragraph">
-<p>Consider adding a <strong>Vocabulary</strong> to your project when:</p>
+<p>Consider using Vale GitHub Action when:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Missing words in the Vale dictionary are causing <strong>Spelling</strong> errors</p>
+<p>The goal is to measure or enforce the project compliance with the Style Guides.</p>
 </li>
 <li>
-<p>The word is too specific to benefit to other projects.</p>
+<p>The content repository is on GitHub.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>When adding the word will benefit to other projects, consider <a href="../../contributor-guide/extending-the-spelling-rule/" class="xref page">Extending the <code>Spelling</code> rule</a>. For example: product and tool names, common terms specific to the software industry.</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Due to the GitHub token permissions, this Action can not post annotations to PRs from forked repositories.
+</td>
+</tr>
+</table>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p><a href="../using-vale-cli/" class="xref page">Using Vale CLI</a></p>
+<p><a href="../installing-vale-cli/" class="xref page">Installing and configuring Vale</a></p>
 </li>
 <li>
-<p><a href="../understanding-vale-output/" class="xref page">Understanding vale output</a></p>
+<p><a href="../adding-vale-configuration-to-a-project/" class="xref page">Adding Vale to a project</a></p>
 </li>
 <li>
-<p><a href="../defining-a-vale-onboarding-strategy/" class="xref page">Defining a vale onboarding strategy</a></p>
+<p><a href="../defining-a-vale-onboarding-strategy/" class="xref page">Defining a Vale onboarding strategy</a></p>
 </li>
 </ul>
 </div>
-<div class="ulist">
+<div class="olist arabic">
 <div class="title">Procedure</div>
-<ul>
+<ol class="arabic">
 <li>
-<p>Create or edit the Vocabulary for your project: create or edit the <code>.vale/styles/Vocab/<em>&lt;Project&gt;</em>/accept.txt</code> file and add the missing word. Ensure the entry is not case-sensitive.</p>
+<p>Add a <code>.github/workflows/vale.yml</code> file to your repository with following content:</p>
 <div class="listingblock">
-<div class="title">Entry in the vocabulary, not case-sensitive</div>
 <div class="content">
-<pre>[Pp]odman</pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">name: Linting with Vale
+on:
+  - pull_request
+  - push
+jobs:
+  prose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Vale Linter
+        uses: errata-ai/vale-action@v1.4.0
+        with:
+          files: __onlyModified
+          styles: https://github.com/redhat-documentation/vale-at-red-hat/releases/latest/download/RedHat.zip
+          config: https://raw.githubusercontent.com/redhat-documentation/vale-at-red-hat/master/.vale-for-github-action.ini
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Register the Vocabulary in the <code>.vale.ini</code> file</p>
+<p>Create a <code>.github/styles</code> directory containing an empty file. The Vale GitHub Action use it to decompress the <code>RedHat</code> style.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ini hljs" data-lang="ini">Vocab = <em>&lt;Project&gt;</em></code></pre>
+<pre>$ mkdir .github/styles
+$ touch .github/styles/.placeholder</pre>
 </div>
 </div>
 </li>
-</ul>
-</div>
-<div class="ulist">
-<div class="title">Verification</div>
-<ul>
-<li>
-<p>Run the <code>vale</code> command on a content file containing the word which was missing.</p>
-<div class="listingblock">
-<div class="content">
-<pre>$ cd <em>&lt;project_directory&gt;</em>
-$ vale <em>&lt;filename&gt;</em></pre>
-</div>
-</div>
-</li>
-</ul>
+</ol>
 </div>
 <div class="ulist">
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="https://docs.errata.ai/vale/vocab">Vale documentation - Vocabularies</a></p>
+<p><a href="https://github.com/errata-ai/vale-action">Vale GitHub action</a>.</p>
 </li>
 </ul>
-</div>
-</div>
 </div>
 </article>
   </div>
